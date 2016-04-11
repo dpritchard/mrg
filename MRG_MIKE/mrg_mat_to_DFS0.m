@@ -27,6 +27,9 @@ function mrg_mat_to_DFS0(padded_struct, datetime_name, variables)
 %           DP. Modifications to make it more generic.
 %   v 1.3   14/02/2013
 %           DP. Documentation!
+%   v 1.4   Getting timesteps right!
+%   v 1.5   No longer round timesteps: Problematic for sub-second
+%           timesteps
 
 %% Is the input a structured array
 if ~isstruct(padded_struct)
@@ -47,7 +50,7 @@ end
 
 %% Is it a cell array
 if ~iscell(variables)
-    error('The variables must be suppled as a MATLAB cell array.');
+    error('The variables must be supplied as a MATLAB cell array.');
 end
 
 %% Are all the variables there?
@@ -72,8 +75,9 @@ end
 
 %% Are the time steps equidistant?  If so then setup the MIKE timestep
 % Check time step for equidistant spacing
-timestep = round((datetime(2) - datetime(1))*24*60);
-t_steps = diff(datetime)*24*60;
+%timestep = round((datetime(2) - datetime(1))*24*60*60);
+timestep = (datetime(2) - datetime(1))*24*60*60;
+t_steps = diff(datetime)*24*60*60;
 
 if any(abs(t_steps - timestep)>=1/60)
     error('Timestep is not equidistant in file!');
