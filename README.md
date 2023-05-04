@@ -1,5 +1,5 @@
-# MRG MATLAB Toolbox
-This is the readme file for the MATLAB toolbox under development by the [Marine Research Group (MRG)][mrg] at [QUB SPACE][space].
+# MRG MATLAB Toolbox (Archive)
+This is the README file for a MATLAB toolbox that was, at one time, under development by the [Marine Research Group (MRG)][mrg] at [QUB SPACE][space]. As of May 2022, it has been more than 7 years since anyone has interacted with this repository. The primary maintainer (Pritchard) hasn't used MATLAB since at least 2014. As a result, this repository is being archived. At some point in the future it will be deleted. 
 
 ## Documentation
 [Documentation for this toolbox][mrg_docs] is hosted here on GitHub in a [separate repository][mrg_docs_repo].  
